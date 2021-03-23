@@ -119,7 +119,7 @@ def checkSampleSize(featuresAll, appliancesAll):
             appliances_set = set(appliances)
             for element in appliances_set:
                 indices = [i for i, j in enumerate(appliances) if j == element]
-                if len(indices) < MIN_SAMPLES or element=="NULL" or element=="powermeter21" or element=="powermeter27":
+                if len(indices) < MIN_SAMPLES:
                     print(element + " deleted because there are too few samples")
                     for i in reversed(indices):
                         del features[i]
